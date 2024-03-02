@@ -1,4 +1,4 @@
-const isEven = num => num % 2 === 0 ? true : false;
+const isEven = num => num % 2 === 0;
 
 const average = (nums) => sum(nums)/nums.length;
 
@@ -29,7 +29,7 @@ window.onload = () => {
         label.className = "label";
         label.textContent = name;
         container.appendChild(label);
-    };
+    }
     const letters = charRange('A', 'J');
     letters.forEach(createLabel);
     range(1, 99).forEach((number) => {
@@ -39,12 +39,12 @@ window.onload = () => {
             input.type = "text";
             input.id = letter + number;
             input.ariaLabel = letter + number;
+            input.onchange = update;
             container.appendChild(input);
-            input.onchange() = update;
         })
-    });
+    })
     
-};
+}
 
 const update = (event) => {
     const element = event.target;
